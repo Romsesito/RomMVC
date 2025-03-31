@@ -25,6 +25,18 @@ public class PlayerService {
         return playerRepository.findById(id).orElse(null);
     }
 
+    public Player actualizarJugador(Long id, Player jugador) {
+        Player jugadorExistente = playerRepository.findById(id).orElse(null);
+        if (jugadorExistente != null) {
+            jugadorExistente.setNombre(jugador.getNombre());
+            jugadorExistente.setGeneroJuegoFavorito(jugador.getGeneroJuegoFavorito());
+            jugadorExistente.setUltimoVideojuegoTerminado(jugador.getUltimoVideojuegoTerminado());
+            jugadorExistente.setJuegosPlatinados(jugador.getJuegosPlatinados());
+            return playerRepository.save(jugadorExistente);
+        }
+        return null;
+    }
+
     public void eliminarJugador(Long id) {
         playerRepository.deleteById(id);
     }

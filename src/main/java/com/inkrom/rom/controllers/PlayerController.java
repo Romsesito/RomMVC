@@ -25,6 +25,11 @@ public class PlayerController {
         return playerService.guardarJugador(jugador);
     }
 
+    @PutMapping("/{id}")
+    public Player actualizarJugador(@PathVariable Long id, @RequestBody Player jugador) {
+        return playerService.actualizarJugador(id, jugador);
+    }
+
     @GetMapping("/{id}")
     public Player obtenerJugadorPorId(@PathVariable Long id) {
         return playerService.obtenerJugadorPorId(id);
