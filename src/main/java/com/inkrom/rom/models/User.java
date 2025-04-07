@@ -10,18 +10,16 @@ import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
 @Entity
-@Table(name = "player")
+@Table(name = "usuarios")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Player {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nombre;
-    private String generoJuegoFavorito;
-    private String ultimoVideojuegoTerminado;
-    private Integer juegosPlatinados;
+    private String username; // Nombre de usuario
+    private String password; // Contraseña (encriptada)
 }
