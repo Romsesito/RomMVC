@@ -42,13 +42,13 @@ public class SecurityConfig {
     @Bean
     public org.springframework.web.cors.CorsConfigurationSource corsConfigurationSource() {
         org.springframework.web.cors.CorsConfiguration configuration = new org.springframework.web.cors.CorsConfiguration();
-        configuration.addAllowedOrigin("http://localhost:5173"); // Permitir React
-        configuration.addAllowedMethod("*"); // Permitir todos los métodos (GET, POST, PUT, DELETE)
-        configuration.addAllowedHeader("*"); // Permitir todos los encabezados
-        configuration.setAllowCredentials(true); // Permitir credenciales (opcional)
+        configuration.addAllowedOrigin("http://localhost:5173"); 
+        configuration.addAllowedMethod("*"); 
+        configuration.addAllowedHeader("*"); 
+        configuration.setAllowCredentials(true); 
 
         org.springframework.web.cors.UrlBasedCorsConfigurationSource source = new org.springframework.web.cors.UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration); // Aplicar configuración a todas las rutas
+        source.registerCorsConfiguration("/**", configuration); 
         return source;
     }
 }

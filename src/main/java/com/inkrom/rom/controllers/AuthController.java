@@ -9,7 +9,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "http://localhost:5173") // Permitir solicitudes desde React
+@CrossOrigin(origins = "http://localhost:5173") 
 public class AuthController {
 
     @Autowired
@@ -24,7 +24,7 @@ public class AuthController {
     public String login(@RequestBody User loginRequest) {
         String token = userService.login(loginRequest.getUsername(), loginRequest.getPassword());
         if (token != null) {
-            return token; // Devuelve el token JWT
+            return token; 
         }
         throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Credenciales inválidas");
     }

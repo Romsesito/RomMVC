@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/jugadores")
-@CrossOrigin(origins = "http://localhost:5173") // Permitir solicitudes desde React
+@CrossOrigin(origins = "http://localhost:5173") 
 public class PlayerController {
 
     @Autowired

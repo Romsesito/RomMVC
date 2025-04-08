@@ -27,9 +27,9 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             String username = jwtUtil.extractUsername(token);
 
             if (username != null && jwtUtil.isTokenValid(token, username)) {
-                // Crear un token de autenticación vacío o con roles predeterminados
+            
                 UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
-                        username, null, null); // Sin roles
+                        username, null, null); 
                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
             }
         }
